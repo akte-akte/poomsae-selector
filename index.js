@@ -1,6 +1,6 @@
 
 const divisionSelector = document.getElementById('wt-division');
-const generateButton = document.getElementById('spin');
+const generateButton = document.getElementById('generate-poomsae');
 
 const wtPoomsae = [
   "Taegeuk sa jang",
@@ -37,6 +37,7 @@ divisionSelector.addEventListener('change', (e) => {
   const poomsaeNames = poomsaeList.map((index) => wtPoomsae[index]);
   console.log(poomsaeList);
   document.getElementById('poomsae-range').innerHTML = poomsaeNames.join(", ");
+  generateButton.disabled = false;
  
 });
 
@@ -56,6 +57,7 @@ generateButton.addEventListener('click', (e) => {
   document.getElementById('poomsae-two').innerHTML = poomsae[1];
   console.log("poomsae one is: ", poomsae[0]);
   console.log("poomsae two is: ", poomsae[1]);
+
 });
 
 
