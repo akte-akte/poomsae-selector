@@ -1,9 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Exo', sans-serif;
     margin: 0;
     padding: 1rem 2rem;
     height: 100vh;
     background-color: rgb(244, 117, 182);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+   
 }
 
 .slotmachine {
@@ -12,10 +23,11 @@ body {
     align-items: center;
     height: 100px;
 }
+
 .poomsaes {
     height: 100px;
-    min-width: 200px;
-    border: 1px solid black;
+    min-width: 215px;
+    border: 3px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,4 +35,59 @@ body {
     margin: 0 10px;
     padding: 0 10px;
     background-color: white;
+    overflow: hidden;
+}
+
+.highlight {
+    font-size: 4rem;
+    opacity: 0.8;
+    margin: 0 -22px
+}
+
+.pulse {
+    animation: pulse 3s 3;
+}
+
+
+.drop-in {
+    animation: drop-in 2s;
+}
+
+.drop-out {
+    animation: drop-out 1s;
+}
+
+/* not working yet */
+.drop-out-in {
+    animation: drop-out 1s, drop-in 2s;
+}
+    
+@keyframes drop-in {
+    from {
+        transform: translateY(-250%);
+    }
+    to {
+        transform: translateY(0);
+    }
+    
+}
+
+@keyframes drop-out {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(250%);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+    .slotmachine {
+        flex-direction: column;
+        height: auto;
+    }
+    
 }

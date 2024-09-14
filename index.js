@@ -1,6 +1,8 @@
 
 const divisionSelector = document.getElementById('wt-division');
 const generateButton = document.getElementById('generate-poomsae');
+const poomsaeOne = document.getElementById('poomsae-one');
+const poomsaeTwo = document.getElementById('poomsae-two');
 
 const wtPoomsae = [
   "Taegeuk sa jang",
@@ -18,7 +20,6 @@ const wtPoomsae = [
   "Hansu"
 ];
 
-// for each division, create a list of poomsae. reference it by the index in the array
 
 const divisionPoomsaeRange = {
   "cadet": [0, 1, 2, 3, 4, 5, 6, 7],
@@ -32,13 +33,11 @@ const divisionPoomsaeRange = {
 };
 
 divisionSelector.addEventListener('change', (e) => {
-  console.log(divisionSelector.value);
   const poomsaeList = divisionPoomsaeRange[divisionSelector.value];
   const poomsaeNames = poomsaeList.map((index) => wtPoomsae[index]);
-  console.log(poomsaeList);
   document.getElementById('poomsae-range').innerHTML = poomsaeNames.join(", ");
   generateButton.disabled = false;
- 
+
 });
 
 // extract the poomsae generation to a function
@@ -51,18 +50,30 @@ function generatePoomsae(division) {
 
 generateButton.addEventListener('click', (e) => {
 
+  e.preventDefault;
+
+  poomsaeOne.classList.add('drop-out');
+  poomsaeTwo.classList.add('drop-out');
+
+  poomsaeOne.classList.remove('drop-in', 'drop-out');
+  poomsaeTwo.classList.remove('drop-in', 'drop-out');
+  
+
+  void poomsaeOne.offsetWidth;
+  void poomsaeTwo.offsetWidth;
+
+
   const division = divisionSelector.value;
   const poomsae = generatePoomsae(division);
 
-
-  document.getElementById('poomsae-one').innerHTML = poomsae[0];
+  poomsaeOne.classList.add('drop-in');
+  poomsaeOne.innerHTML = poomsae[0];
 
   setTimeout(() => {
-    document.getElementById('poomsae-two').innerHTML = poomsae[1];
+    poomsaeTwo.classList.add('drop-in');
+    poomsaeTwo.innerHTML = poomsae[1];
   }, 300);
-  // document.getElementById('poomsae-two').innerHTML = poomsae[1];
-  console.log("poomsae one is: ", poomsae[0]);
-  console.log("poomsae two is: ", poomsae[1]);
+
 
 });
 
