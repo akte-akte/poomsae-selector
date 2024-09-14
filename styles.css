@@ -1,0 +1,17 @@
+.slotmachine {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+#poomsae-one, #poomsae-two {
+    height: 100px;
+    min-width: 150px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin: 0 10px;
+    padding: 0 10px;
+}
