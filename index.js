@@ -21,8 +21,8 @@ const wtPoomsae = [
 // for each division, create a list of poomsae. reference it by the index in the array
 
 const divisionPoomsaeRange = {
-  "cadets": [0, 1, 2, 3, 4, 5, 6, 7],
-  "juniors": [1, 2, 3, 4, 5, 6, 7, 8],
+  "cadet": [0, 1, 2, 3, 4, 5, 6, 7],
+  "junior": [1, 2, 3, 4, 5, 6, 7, 8],
   "u30": [3, 4, 5, 6, 7, 8, 9, 10],
   "u40": [3, 4, 5, 6, 7, 8, 9, 10],
   "u50": [4, 5, 6, 7, 8, 9, 10, 11],
@@ -50,11 +50,17 @@ function generatePoomsae(division) {
 }
 
 generateButton.addEventListener('click', (e) => {
+
   const division = divisionSelector.value;
   const poomsae = generatePoomsae(division);
 
+
   document.getElementById('poomsae-one').innerHTML = poomsae[0];
-  document.getElementById('poomsae-two').innerHTML = poomsae[1];
+
+  setTimeout(() => {
+    document.getElementById('poomsae-two').innerHTML = poomsae[1];
+  }, 300);
+  // document.getElementById('poomsae-two').innerHTML = poomsae[1];
   console.log("poomsae one is: ", poomsae[0]);
   console.log("poomsae two is: ", poomsae[1]);
 
