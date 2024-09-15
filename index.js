@@ -54,27 +54,28 @@ function generateAnimationPrefix() {
   return animationOptions[Math.floor(Math.random() * animationOptions.length)];
 }
 
-  generateSetButton.addEventListener('click', (e) => {
+generateSetButton.addEventListener('click', (e) => {
   e.preventDefault;
   generateSetButton.disabled = true;
+  
   let animationPrefix = generateAnimationPrefix();
   console.log(animationPrefix);
-   
+
   poomsaeOne.classList.add(animationPrefix + '-out');
   poomsaeTwo.classList.add(animationPrefix + '-out');
- 
+
   // a bit of a hack to trigger the css animation
   void poomsaeOne.offsetWidth;
   void poomsaeTwo.offsetWidth;
 
   const division = divisionSelector.value;
   const poomsae = generatePoomsae(division);
-  
+
   setTimeout(() => {
-  poomsaeOne.classList.remove(animationPrefix + '-out');
-  poomsaeOne.classList.add(animationPrefix + '-in');
-  poomsaeOne.innerHTML = poomsae[0];
-}, 275);
+    poomsaeOne.classList.remove(animationPrefix + '-out');
+    poomsaeOne.classList.add(animationPrefix + '-in');
+    poomsaeOne.innerHTML = poomsae[0];
+  }, 275);
 
 
   setTimeout(() => {
@@ -89,8 +90,8 @@ function generateAnimationPrefix() {
     poomsaeTwo.classList.remove(animationPrefix + '-in');
     generateSetButton.disabled = false;
 
-  }, 2500);
- 
+  }, 2800);
+
 });
 
 
