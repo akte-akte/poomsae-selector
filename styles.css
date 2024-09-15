@@ -59,7 +59,7 @@ main {
 
 /* not working yet */
 .drop-out-in {
-    animation: drop-out 1s, drop-in 2s;
+    animation: drop-out 5s, drop-in 4s;
 }
     
 @keyframes drop-in {
@@ -77,7 +77,7 @@ main {
         transform: translateY(0);
     }
     to {
-        transform: translateY(250%);
+        transform: translateY(300%);
     }
 }
 

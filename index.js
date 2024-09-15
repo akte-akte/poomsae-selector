@@ -51,13 +51,9 @@ function generatePoomsae(division) {
 generateButton.addEventListener('click', (e) => {
 
   e.preventDefault;
-
+ 
   poomsaeOne.classList.add('drop-out');
   poomsaeTwo.classList.add('drop-out');
-
-  poomsaeOne.classList.remove('drop-in', 'drop-out');
-  poomsaeTwo.classList.remove('drop-in', 'drop-out');
-  
 
   void poomsaeOne.offsetWidth;
   void poomsaeTwo.offsetWidth;
@@ -65,14 +61,20 @@ generateButton.addEventListener('click', (e) => {
 
   const division = divisionSelector.value;
   const poomsae = generatePoomsae(division);
-
+  
+  setTimeout(() => {
+  poomsaeOne.classList.remove('drop-out');
   poomsaeOne.classList.add('drop-in');
   poomsaeOne.innerHTML = poomsae[0];
+}, 300);
+
 
   setTimeout(() => {
+
+    poomsaeTwo.classList.remove('drop-out');
     poomsaeTwo.classList.add('drop-in');
     poomsaeTwo.innerHTML = poomsae[1];
-  }, 300);
+  }, 800);
 
 
 });
