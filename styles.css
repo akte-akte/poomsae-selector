@@ -3,6 +3,7 @@
 body {
     font-family: 'Exo', sans-serif;
     font-size: 1.2rem;
+    font-weight: 600;
     margin: 0;
     padding: 1rem 2rem;
     height: 100vh;
@@ -29,13 +30,19 @@ main {
 select,
 button {
     min-height: 40px;
-    width: 200px;
+    min-width: 210px;
     text-align: center;
     border: 3px solid black;
     margin: 0 10px;
+    font-size: 1.1rem;
+    padding: 6px 10px;
 }
 
-button:hover {
+select:focus, button:focus {
+    outline: rgb(11, 179, 179) 3px solid;
+}
+
+button:hover {      
     background-color: black;
     color: white;
     transition: 500ms ease-in-out;
@@ -53,12 +60,17 @@ button:hover {
     padding: 0 10px;
     background-color: white;
     overflow: hidden;
+    cursor:pointer;
 }
 
 .highlight {
     font-size: 4rem;
-    opacity: 0.8;
+    opacity: 0.6;
     margin: 0 -22px;
+}
+
+.lighter {
+   font-weight: 500;
 }
 
 
@@ -117,7 +129,6 @@ button:hover {
 
     .highlight {
         font-size: 3.8rem;
-        color: steelblue;
         margin: -2.3rem 0;
 
     }
