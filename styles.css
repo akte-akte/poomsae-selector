@@ -38,11 +38,12 @@ button {
     padding: 6px 10px;
 }
 
-select:focus, button:focus {
+select:focus,
+button:focus {
     outline: rgb(11, 179, 179) 3px solid;
 }
 
-button:hover {      
+button:hover {
     background-color: black;
     color: white;
     transition: 500ms ease-in-out;
@@ -50,7 +51,7 @@ button:hover {
 
 .poomsaes {
     height: 100px;
-    min-width: 215px;
+    min-width: 220px;
     border: 3px solid black;
     display: flex;
     justify-content: center;
@@ -60,7 +61,7 @@ button:hover {
     padding: 0 10px;
     background-color: white;
     overflow: hidden;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .highlight {
@@ -70,30 +71,46 @@ button:hover {
 }
 
 .lighter {
-   font-weight: 500;
+    font-weight: 500;
 }
 
 
 .drop-in {
     animation: drop-in 2s;
+
 }
 
 .drop-out {
     animation: drop-out 1s;
+
 }
 
-/* not working yet */
-.drop-out-in {
-    animation: drop-out 5s, drop-in 4s;
+.fade-in {
+    animation: fade-in 2s;
 }
+
+.fade-out {
+    animation: fade-out 1s;
+}
+
+.flip-in {
+    animation: flip-in 2s;
+}
+
+.flip-out {
+    animation: flip-out 1s;
+}
+
 
 @keyframes drop-in {
     from {
         transform: translateY(-250%);
+
     }
 
     to {
         transform: translateY(0);
+
     }
 
 }
@@ -101,10 +118,66 @@ button:hover {
 @keyframes drop-out {
     from {
         transform: translateY(0);
+
     }
 
     to {
         transform: translateY(300%);
+
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        scale: 0.1;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+        scale: 1;
+
+    }
+
+    to {
+        opacity: 0;
+        scale: 0;
+    }
+}
+
+@keyframes flip-in {
+    from {
+        transform: rotatez(180deg);
+        scale: 0.1;
+       
+    }
+
+    to {
+        transform: rotatez(0);
+        scale: 1;
+       
+    }
+}
+
+@keyframes flip-out {
+    from {
+        transform: rotatez(0);
+        scale: 1;
+      
+    }
+
+    to {
+        transform: rotatez(180deg);
+        scale:0;
+      
+
     }
 }
 
