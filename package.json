@@ -1,0 +1,17 @@
+{
+  "name": "poomsae-selector",
+  "version": "1.0.0",
+  "description": "A utility to generate pairs of poomsae for training.",
+  "main": "index.hml",
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akte-akte/poomsae-selector.git"
+  },
+  "author": "akte-akte",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akte-akte/poomsae-selector/issues"
+  },
+  "homepage": "https://github.com/akte-akte/poomsae-selector#readme"
+}

@@ -1,3 +1,3 @@
 # Poomsae Selector and randomiser
 
-Simiulate WT competition by random drwing of Lots
+Simulate WT competition by random drawing of lots
