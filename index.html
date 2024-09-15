@@ -10,7 +10,8 @@
 <body>
     <main>
         <h1>Welcome to the selector</h1>
-        <p>Choose your division:</p>
+        <div class="form-group">
+        <label for="wt-division">Choose your division:</label>
         <select id="wt-division">
             <option value="cadet">Cadet</option>
             <option value="junior">Junior</option>
@@ -21,6 +22,7 @@
             <option value="u65">Under 65</option>
             <option value="o65">Over 65</option>
         </select>
+        </div>
         <p><b>Your poomsae range is:</b></p>
         <p id="poomsae-range">...</p>
 
@@ -28,7 +30,7 @@
         <button id="generate-poomsae" disabled>crank me</button>
        
         <p>Your set is: </p>
-        <div class="slotmachine">
+        <div class="form-group">
             <div class="poomsaes"><span class="drop-in" id="poomsae-one">?</span></div>
             <div class="hidden highlight">&amp;</div>
             <div class="poomsaes"><span class="drop-in"  id="poomsae-two">?</span></div>
