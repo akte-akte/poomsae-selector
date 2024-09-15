@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Exo', sans-serif;
+    font-size: 1.2rem;
     margin: 0;
     padding: 1rem 2rem;
     height: 100vh;
@@ -14,7 +15,7 @@ main {
     justify-content: center;
     align-items: center;
     height: 100%;
-   
+
 }
 
 .slotmachine {
@@ -41,7 +42,7 @@ main {
 .highlight {
     font-size: 4rem;
     opacity: 0.8;
-    margin: 0 -22px
+    margin: 0 -22px;
 }
 
 .pulse {
@@ -61,21 +62,23 @@ main {
 .drop-out-in {
     animation: drop-out 5s, drop-in 4s;
 }
-    
+
 @keyframes drop-in {
     from {
         transform: translateY(-250%);
     }
+
     to {
         transform: translateY(0);
     }
-    
+
 }
 
 @keyframes drop-out {
     from {
         transform: translateY(0);
     }
+
     to {
         transform: translateY(300%);
     }
@@ -85,9 +88,23 @@ main {
     body {
         padding: 1rem;
     }
+
     .slotmachine {
         flex-direction: column;
         height: auto;
     }
-    
+
+    .poomsaes {
+
+        width: 100%;
+
+    }
+
+    .highlight {
+        font-size: 3.8rem;
+        color: steelblue;
+        margin: -2.3rem 0;
+
+    }
+
 }
