@@ -66,7 +66,7 @@ generateButton.addEventListener('click', (e) => {
   poomsaeOne.classList.remove('drop-out');
   poomsaeOne.classList.add('drop-in');
   poomsaeOne.innerHTML = poomsae[0];
-}, 300);
+}, 275);
 
 
   setTimeout(() => {
@@ -74,7 +74,7 @@ generateButton.addEventListener('click', (e) => {
     poomsaeTwo.classList.remove('drop-out');
     poomsaeTwo.classList.add('drop-in');
     poomsaeTwo.innerHTML = poomsae[1];
-  }, 800);
+  }, 825);
 
 
 });
