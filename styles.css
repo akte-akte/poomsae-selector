@@ -50,7 +50,7 @@ button:hover {
 
 .poomsaes {
     height: 100px;
-    min-width: 215px;
+    min-width: 220px;
     border: 3px solid black;
     display: flex;
     justify-content: center;
@@ -75,25 +75,41 @@ button:hover {
 
 
 .drop-in {
-    animation: drop-in 2s;
+    animation: drop-in 2s
+    ease-in-out;
+   
 }
 
 .drop-out {
-    animation: drop-out 1s;
+    animation: drop-out 1s ;
+   
 }
 
-/* not working yet */
-.drop-out-in {
-    animation: drop-out 5s, drop-in 4s;
+.fade-in {
+    animation: fade-in 2s ease-in-out;
 }
+
+.fade-out {
+    animation: fade-out 1s ease-out;
+}
+
+.flip-in {
+    animation: flip-in 2s;
+}
+.flip-out {
+    animation: flip-out 1s;
+}
+
 
 @keyframes drop-in {
     from {
         transform: translateY(-250%);
+       
     }
 
     to {
         transform: translateY(0);
+     
     }
 
 }
@@ -101,10 +117,57 @@ button:hover {
 @keyframes drop-out {
     from {
         transform: translateY(0);
+      
     }
 
     to {
         transform: translateY(300%);
+      
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        scale: 0.1;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+        scale: 1;
+
+    }
+
+    to {
+        opacity: 0;
+        scale: 0;
+    }
+}
+
+@keyframes flip-in {
+    from {
+        transform: rotateY(180deg);
+    }
+
+    to {
+        transform: rotateY(0);
+    }
+}
+
+@keyframes flip-out {
+    from {
+        transform: rotateY(0);
+    }
+
+    to {
+        transform: rotateY(180deg);
     }
 }
 
