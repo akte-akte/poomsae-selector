@@ -51,7 +51,7 @@ button:focus {
     outline: rgb(11, 179, 179) 3px solid;
 }
 
-button:hover {
+button:hover:not([disabled]) {
     background-color: black;
     color: white;
     transition: 500ms ease-in-out;
@@ -164,13 +164,13 @@ button:hover {
     from {
         transform: rotatez(180deg);
         scale: 0.1;
-       
+
     }
 
     to {
         transform: rotatez(0);
         scale: 1;
-       
+
     }
 }
 
@@ -178,13 +178,13 @@ button:hover {
     from {
         transform: rotatez(0);
         scale: 1;
-      
+
     }
 
     to {
         transform: rotatez(180deg);
-        scale:0;
-      
+        scale: 0;
+
 
     }
 }
@@ -203,12 +203,12 @@ button:hover {
     }
 
     main {
-        justify-content: flex-start ;
+        justify-content: flex-start;
     }
 
-  h1 {
-    margin-top: 0.3rem;
-  }
+    h1 {
+        margin-top: 0.4rem;
+    }
 
     .form-group {
         flex-direction: column;
