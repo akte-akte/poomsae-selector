@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Welcome to the selector</title>
+    <title>Poomsae selector</title>
     <link rel="stylesheet" type="text/css" href="./styles.css">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
 
@@ -10,7 +10,7 @@
 
 <body>
     <main>
-        <h1>Welcome to the selector</h1>
+        <h1 class="fitted">Poomsae selector</h1>
         <div class="form-group">
             <label for="wt-division">Choose your division:</label>
             <select id="wt-division">
@@ -24,13 +24,13 @@
                 <option value="o65">Over 65</option>
             </select>
         </div>
-        <div class="smaller">
+        <div class="smaller left">
             <p>Your poomsae range is:
-                <span id="poomsae-range" class="lighter">...</span>
+                <span id="poomsae-range" class="lighter">...<br /></span>
             </p>
         </div>
 
-        <p>Next, hit the button to generate your set:</p>
+        <p class="fitted">Next, hit the button to generate your set:</p>
         <button id="generate-poomsae" disabled>Generate Poomsae &#128640;</button>
 
         <p>Your set is:</p>
