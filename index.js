@@ -1,8 +1,10 @@
 
 const divisionSelector = document.getElementById('wt-division');
-const generateButton = document.getElementById('generate-poomsae');
+const generateSetButton = document.getElementById('generate-poomsae');
 const poomsaeOne = document.getElementById('poomsae-one');
 const poomsaeTwo = document.getElementById('poomsae-two');
+
+const animationOptions = ['fade', 'drop', 'flip'];
 
 const wtPoomsae = [
   "Taegeuk sa jang",
@@ -36,11 +38,11 @@ divisionSelector.addEventListener('change', (e) => {
   const poomsaeList = divisionPoomsaeRange[divisionSelector.value];
   const poomsaeNames = poomsaeList.map((index) => wtPoomsae[index]);
   document.getElementById('poomsae-range').innerHTML = poomsaeNames.join(", ");
-  generateButton.disabled = false;
+  generateSetButton.disabled = false;
 
 });
 
-// extract the poomsae generation to a function
+
 function generatePoomsae(division) {
   const poomsaeList = divisionPoomsaeRange[division];
   const poomsae1 = wtPoomsae[poomsaeList[Math.floor(Math.random() * poomsaeList.length)]];
@@ -48,34 +50,47 @@ function generatePoomsae(division) {
   return [poomsae1, poomsae2];
 }
 
-generateButton.addEventListener('click', (e) => {
+function generateAnimationPrefix() {
+  return animationOptions[Math.floor(Math.random() * animationOptions.length)];
+}
 
+generateSetButton.addEventListener('click', (e) => {
   e.preventDefault;
+  generateSetButton.disabled = true;
+  
+  let animationPrefix = generateAnimationPrefix();
+  console.log(animationPrefix);
 
-  poomsaeOne.classList.add('drop-out');
-  poomsaeTwo.classList.add('drop-out');
+  poomsaeOne.classList.add(animationPrefix + '-out');
+  poomsaeTwo.classList.add(animationPrefix + '-out');
 
+  // a bit of a hack to trigger the css animation
   void poomsaeOne.offsetWidth;
   void poomsaeTwo.offsetWidth;
-
 
   const division = divisionSelector.value;
   const poomsae = generatePoomsae(division);
 
   setTimeout(() => {
-    poomsaeOne.classList.remove('drop-out');
-    poomsaeOne.classList.add('drop-in');
+    poomsaeOne.classList.remove(animationPrefix + '-out');
+    poomsaeOne.classList.add(animationPrefix + '-in');
     poomsaeOne.innerHTML = poomsae[0];
   }, 275);
 
 
   setTimeout(() => {
 
-    poomsaeTwo.classList.remove('drop-out');
-    poomsaeTwo.classList.add('drop-in');
+    poomsaeTwo.classList.remove(animationPrefix + '-out');
+    poomsaeTwo.classList.add(animationPrefix + '-in');
     poomsaeTwo.innerHTML = poomsae[1];
   }, 825);
 
+  setTimeout(() => {
+    poomsaeOne.classList.remove(animationPrefix + '-in');
+    poomsaeTwo.classList.remove(animationPrefix + '-in');
+    generateSetButton.disabled = false;
+
+  }, 2800);
 
 });
 
