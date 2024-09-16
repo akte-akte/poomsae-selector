@@ -4,6 +4,7 @@
 <head>
     <title>Welcome to the selector</title>
     <link rel="stylesheet" type="text/css" href="./styles.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
 
 </head>
 
@@ -23,8 +24,11 @@
                 <option value="o65">Over 65</option>
             </select>
         </div>
-        <p>Your poomsae range is:</p>
-        <p id="poomsae-range" class="lighter">...</p>
+        <div class="smaller">
+            <p>Your poomsae range is:
+                <span id="poomsae-range" class="lighter">...</span>
+            </p>
+        </div>
 
         <p>Next, hit the button to generate your set:</p>
         <button id="generate-poomsae" disabled>Generate Poomsae &#128640;</button>

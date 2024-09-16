@@ -17,7 +17,6 @@ main {
     justify-content: center;
     align-items: center;
     height: 100%;
-
 }
 
 .form-group {
@@ -25,6 +24,10 @@ main {
     justify-content: center;
     align-items: center;
     height: 100px;
+}
+
+.smaller {
+    font-size: 0.8rem;
 }
 
 select,
@@ -177,6 +180,15 @@ button:hover {
         transform: rotatez(180deg);
         scale:0;
       
+
+    }
+}
+
+@media screen and (min-width: 800px) {
+
+    main {
+
+        justify-content: center;
 
     }
 }
