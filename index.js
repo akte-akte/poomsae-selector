@@ -51,7 +51,7 @@ function generatePoomsae(division) {
 generateButton.addEventListener('click', (e) => {
 
   e.preventDefault;
- 
+
   poomsaeOne.classList.add('drop-out');
   poomsaeTwo.classList.add('drop-out');
 
@@ -61,12 +61,12 @@ generateButton.addEventListener('click', (e) => {
 
   const division = divisionSelector.value;
   const poomsae = generatePoomsae(division);
-  
+
   setTimeout(() => {
-  poomsaeOne.classList.remove('drop-out');
-  poomsaeOne.classList.add('drop-in');
-  poomsaeOne.innerHTML = poomsae[0];
-}, 275);
+    poomsaeOne.classList.remove('drop-out');
+    poomsaeOne.classList.add('drop-in');
+    poomsaeOne.innerHTML = poomsae[0];
+  }, 275);
 
 
   setTimeout(() => {
